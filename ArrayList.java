@@ -33,6 +33,7 @@ public class ArrayList implements List {
      * 
      * @return true if the list is empty, false otherwise. 
      */
+    @Override
     public boolean isEmpty() {
         if (size == 0) {
             return true;
@@ -46,6 +47,7 @@ public class ArrayList implements List {
      * 
      * @return the number of items currently in the list
      */
+    @Override
     public int size() {
         return size;
     }
@@ -60,6 +62,7 @@ public class ArrayList implements List {
      * @return the element or an appropriate error message, 
      *         encapsulated in a ReturnObject
      */
+    @Override
     public ReturnObject get(int index) {
         if (size == 0 && index == 0) {
             return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
@@ -82,6 +85,7 @@ public class ArrayList implements List {
      * @return the element or an appropriate error message, 
      *         encapsulated in a ReturnObject
      */
+    @Override
     public ReturnObject remove(int index) {
         return new ReturnObjectImpl("dummy");
     }
@@ -104,6 +108,7 @@ public class ArrayList implements List {
      * @return an ReturnObject, either empty if the operation is successful and
      *         the item added or containing an appropriate error message
      */
+    @Override
     public ReturnObject add(int index, Object item) {
         if (item == null) {
             return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
@@ -142,6 +147,7 @@ public class ArrayList implements List {
      * @return an ReturnObject, empty if the operation is successful
      *         the item added or containing an appropriate error message
      */
+    @Override
     public ReturnObject add(Object item) {
         return new ReturnObjectImpl("dummy");
     }
