@@ -10,6 +10,8 @@ import org.junit.Test;
 public class ArrayListTester {
     @Test
     public void test() {
-        
+        List arrayList = new ArrayList();
+        assertTrue(arrayList.isEmpty());
+        assertEquals(arrayList.size(), 0);
     }
 }
