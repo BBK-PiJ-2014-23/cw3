@@ -34,7 +34,11 @@ public class ArrayList implements List {
      * @return true if the list is empty, false otherwise. 
      */
     public boolean isEmpty() {
-        return false;
+        if (size == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -43,7 +47,7 @@ public class ArrayList implements List {
      * @return the number of items currently in the list
      */
     public int size() {
-        return 0;
+        return size;
     }
 
     /**
