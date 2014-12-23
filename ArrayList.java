@@ -120,13 +120,9 @@ public class ArrayList implements List {
             return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
         } else {
             if (size == array.length) {
-                Object[] newArray = new Object[size * 2];
-                for (int i = 0; i < size; i++) {
-                    newArray[i] = array[i];
-                }
-                array = newArray;
+                makeBiggerArray();
             }
-            
+
             for (int i = size - 1; i >= index; i--) {
                 array[i + 1] = array[i];
             }
@@ -149,6 +145,23 @@ public class ArrayList implements List {
      */
     @Override
     public ReturnObject add(Object item) {
-        return new ReturnObjectImpl("dummy");
+        if (item == null) {
+            return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+        } else {
+            if (size == array.length) {
+                makeBiggerArray();
+            }
+            array[size] = item;
+            size++;
+            return new ReturnObjectImpl(null);
+        }
+    }
+
+    private void makeBiggerArray() {
+        Object[] newArray = new Object[size * 2];
+        for (int i = 0; i < array.length; i++) {
+            newArray[i] = array[i];
+        }
+        array = newArray;
     }
 }
