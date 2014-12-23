@@ -20,11 +20,11 @@
  * @author Stefan E. Mayer
  */
 public class ArrayList implements List {
-    private Object[] arrayList;
+    private Object[] array;
     private int size;
 
     public ArrayList() {
-        arrayList = new Object[10];
+        array = new Object[100];
         size = 0;
     }
 
@@ -66,7 +66,7 @@ public class ArrayList implements List {
         } else if (index < 0 || index >= size) {
             return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
         } else {
-            return new ReturnObjectImpl(arrayList[index]);
+            return new ReturnObjectImpl(array[index]);
         }
     }
 
@@ -101,11 +101,34 @@ public class ArrayList implements List {
      * @param index the position at which the item should be inserted in
      *              the list
      * @param item the value to insert into the list
-     * @return an ReturnObject, empty if the operation is successful
+     * @return an ReturnObject, either empty if the operation is successful and
      *         the item added or containing an appropriate error message
      */
     public ReturnObject add(int index, Object item) {
-        return new ReturnObjectImpl("dummy");
+        if (item == null) {
+            return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+        } else if (size == 0 && index == 0) {
+            array[0] = item;
+            size++;
+            return new ReturnObjectImpl(null);
+        } else if (index < 0 || index >= size) {
+            return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        } else {
+            if (size == array.length) {
+                Object[] newArray = new Object[size * 2];
+                for (int i = 0; i < size; i++) {
+                    newArray[i] = array[i];
+                }
+                array = newArray;
+            }
+            
+            for (int i = size - 1; i >= index; i--) {
+                array[i + 1] = array[i];
+            }
+            array[index] = item;
+            size++;
+            return new ReturnObjectImpl(null);
+        }
     }
 
     /**
