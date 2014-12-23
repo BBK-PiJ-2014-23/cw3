@@ -35,5 +35,10 @@ public class ArrayListTester {
         assertEquals(arrayList.get(1).getReturnValue(), "test1");
         assertFalse(arrayList.isEmpty());
         assertEquals(arrayList.size(), 2);
+        
+        assertEquals(nullAdd.getError(), ErrorMessage.INVALID_ARGUMENT);
+        ReturnObject add3 = arrayList.add("test3");
+        assertNull(add3.getReturnValue());
+        assertEquals(arrayList.get(2).getReturnValue(), "test3");
     }
 }
