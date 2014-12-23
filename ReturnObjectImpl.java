@@ -30,6 +30,7 @@ public class ReturnObjectImpl implements ReturnObject {
      * Returns whether there has been an error
      * @return whether there has been an error
      */
+    @Override
     public boolean hasError() {
         if (errorMessage == ErrorMessage.NO_ERROR) {
             return false;
@@ -46,6 +47,7 @@ public class ReturnObjectImpl implements ReturnObject {
      * 
      * @return the error message
      */
+    @Override
     public ErrorMessage getError() {
         return errorMessage;
     }
@@ -63,6 +65,7 @@ public class ReturnObjectImpl implements ReturnObject {
      * @return the return value from the method or null if there has been an
      *         error
      */
+    @Override
     public Object getReturnValue() {
         return returnObject;
     }
