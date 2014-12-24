@@ -20,6 +20,18 @@
  * @author Stefan E. Mayer
  */
 public class LinkedList implements List{
+    private Object object;
+    private LinkedList next;
+    private int index;
+    private int size;
+
+    public LinkedList() {
+        object = null;
+        next = null;
+        index = 0;
+        size = 0;
+    }
+
     /**
      * Returns true if the list is empty, false otherwise. 
      * 
@@ -27,7 +39,11 @@ public class LinkedList implements List{
      */
     @Override
     public boolean isEmpty() {
-        return false;
+        if (size == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -37,7 +53,7 @@ public class LinkedList implements List{
      */
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     /**
@@ -88,7 +104,7 @@ public class LinkedList implements List{
      *              the list
      * @param item the value to insert into the list
      * @return an ReturnObject, either empty if the operation is successful and
-	 *         the item added or containing an appropriate error message
+     *         the item added or containing an appropriate error message
      */
     @Override
     public ReturnObject add(int index, Object item) {
