@@ -39,5 +39,11 @@ public class ArrayListTester {
         assertEquals(arrayList.add(null).getError(), ErrorMessage.INVALID_ARGUMENT);
         assertNull(arrayList.add("test3").getReturnValue());
         assertEquals(arrayList.get(2).getReturnValue(), "test3");
+        
+        // remove
+        assertEquals(arrayList.remove(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        assertEquals(arrayList.remove(1).getReturnValue(), "test1");
+        assertEquals(arrayList.get(0).getReturnValue(), "test2");
+        assertEquals(arrayList.get(1).getReturnValue(), "test3");
     }
 }
