@@ -87,7 +87,15 @@ public class ArrayList implements List {
      */
     @Override
     public ReturnObject remove(int index) {
-        return new ReturnObjectImpl("dummy");
+        ReturnObject toDelete = get(index);
+        if (!toDelete.hasError()) {
+            for (int i = index; i < size - 1; i++) {
+                array[i] = array[i + 1];
+            }
+            array[size - 1] = null;
+            size--;
+        }
+        return toDelete;
     }
 
     /**
