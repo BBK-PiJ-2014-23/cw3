@@ -68,7 +68,15 @@ public class LinkedList implements List{
      */
     @Override
     public ReturnObject get(int index) {
-        return new ReturnObjectImpl("dummy");
+        if (size == 0 && index == 0) {
+            return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+        } else if (index < 0 || index >= size) {
+            return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        } else if (this.index < index) {
+            return next.get(index);
+        } else {
+            return new ReturnObjectImpl(object);
+        }
     }
 
     /**
