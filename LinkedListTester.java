@@ -16,10 +16,10 @@ public class LinkedListTester {
         assertTrue(linkedList.isEmpty());
         assertEquals(linkedList.size(), 0);
 
-        //         // get
-        //         assertEquals(linkedList.get(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
-        //         assertEquals(linkedList.get(0).getError(), ErrorMessage.EMPTY_STRUCTURE);
-        //         assertEquals(linkedList.get(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        // get
+        assertEquals(linkedList.get(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        assertEquals(linkedList.get(0).getError(), ErrorMessage.EMPTY_STRUCTURE);
+        assertEquals(linkedList.get(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         //         
         //         // add with index
         //         assertEquals(linkedList.add(0, null).getError(), ErrorMessage.INVALID_ARGUMENT);
