@@ -27,14 +27,14 @@ public class LinkedListTester {
         assertEquals(LinkedList.get(66).getError(), ErrorMessage.EMPTY_STRUCTURE);
 
         //         // add 2 via plain add
-        //         assertEquals(LinkedList.add(null).getError(), ErrorMessage.INVALID_ARGUMENT);
-        //         assertNull(LinkedList.add("0").getReturnValue());
-        //         assertNull(LinkedList.add("1").getReturnValue());
-        // 
+        assertEquals(LinkedList.add(null).getError(), ErrorMessage.INVALID_ARGUMENT);
+        assertNull(LinkedList.add("0").getReturnValue());
+        assertNull(LinkedList.add("1").getReturnValue());
+
         //         // should be two elements
-        //         assertFalse(LinkedList.isEmpty());
-        //         assertEquals(LinkedList.size(), 2);
-        // 
+        assertFalse(LinkedList.isEmpty());
+        assertEquals(LinkedList.size(), 2);
+
         //         // two can be retrieved
         //         assertEquals(LinkedList.get(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         //         assertEquals(LinkedList.get(0).getReturnValue(), "0");
