@@ -16,7 +16,7 @@ public class ArrayListTester {
         assertTrue(arrayList.isEmpty());
         assertEquals(arrayList.size(), 0);
         
-        // get
+        // get on empty structure
         assertEquals(arrayList.get(-1).getError(), ErrorMessage.EMPTY_STRUCTURE);
         assertEquals(arrayList.get(0).getError(), ErrorMessage.EMPTY_STRUCTURE);
         assertEquals(arrayList.get(66).getError(), ErrorMessage.EMPTY_STRUCTURE);
