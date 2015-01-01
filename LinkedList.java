@@ -91,7 +91,21 @@ public class LinkedList implements List{
      */
     @Override
     public ReturnObject remove(int index) {
-        return new ReturnObjectImpl("dummy");
+        ReturnObject toDelete = get(index);
+        if (!toDelete.hasError()) {
+            if (index == 0) {
+                first = first.getNext();
+            } else {
+                Node iterator = first;
+                while (iterator.getNext().getIndex() < index) {
+                    iterator = iterator.getNext();
+                }
+                iterator.setNext(iterator.getNext().getNext());
+            }
+            fixIndices();
+            size--;
+        }
+        return toDelete;
     }
 
     /**
@@ -144,6 +158,16 @@ public class LinkedList implements List{
             iterator.setNext(new Node(item, size()));
             size++;
             return new ReturnObjectImpl(null);
+        }
+    }
+
+    private void fixIndices() {
+        Node iterator = first;
+        int index = 0;
+        while (iterator != null) {
+            iterator.setIndex(index);
+            index++;
+            iterator = iterator.getNext();
         }
     }
 }
