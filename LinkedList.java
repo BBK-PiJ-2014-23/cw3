@@ -167,16 +167,16 @@ public class LinkedList implements List{
     public ReturnObject add(Object item) {
         if (item == null) {
             return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-        } else if (isEmpty()) {
-            first = new Node(item, 0);
-            size++;
-            return new ReturnObjectImpl(null);
         } else {
-            Node iterator = first;
-            while (iterator.getNext() != null) {
-                iterator = iterator.getNext();
+            if (isEmpty()) {
+                first = new Node(item, 0);
+            } else {
+                Node iterator = first;
+                while (iterator.getNext() != null) {
+                    iterator = iterator.getNext();
+                }
+                iterator.setNext(new Node(item, size()));
             }
-            iterator.setNext(new Node(item, size()));
             size++;
             return new ReturnObjectImpl(null);
         }
