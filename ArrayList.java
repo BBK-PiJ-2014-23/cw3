@@ -126,20 +126,17 @@ public class ArrayList implements List {
     public ReturnObject add(int index, Object item) {
         if (item == null) {
             return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-        } else if (size == 0 && index == 0) {
-            array[0] = item;
-            size++;
-            return new ReturnObjectImpl(null);
-        } else if (index < 0 || index >= size) {
+        } else if (index < 0 || index >= size()) {
             return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
         } else {
-            if (size == array.length) {
+            if (size() == array.length) {
                 makeBiggerArray();
             }
 
-            for (int i = size - 1; i >= index; i--) {
+            for (int i = size() - 1; i >= index; i--) {
                 array[i + 1] = array[i];
             }
+
             array[index] = item;
             size++;
             return new ReturnObjectImpl(null);
@@ -162,7 +159,7 @@ public class ArrayList implements List {
         if (item == null) {
             return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
         } else {
-            if (size == array.length) {
+            if (size() == array.length) {
                 makeBiggerArray();
             }
             array[size] = item;
