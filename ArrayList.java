@@ -64,7 +64,7 @@ public class ArrayList implements List {
      */
     @Override
     public ReturnObject get(int index) {
-        if (size == 0 && index == 0) {
+        if (isEmpty()) {
             return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
         } else if (index < 0 || index >= size) {
             return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
