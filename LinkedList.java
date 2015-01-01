@@ -20,15 +20,11 @@
  * @author Stefan E. Mayer
  */
 public class LinkedList implements List{
-    private Object object;
-    private LinkedList next;
-    private int index;
+    private Node first;
     private int size;
 
     public LinkedList() {
-        object = null;
-        next = null;
-        index = 0;
+        first = null;
         size = 0;
     }
 
@@ -72,10 +68,12 @@ public class LinkedList implements List{
             return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
         } else if (index < 0 || index >= size) {
             return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-        } else if (this.index < index) {
-            return next.get(index);
         } else {
-            return new ReturnObjectImpl(object);
+            Node iterator = first;
+            while (iterator.getIndex() != index) {
+                iterator = iterator.getNext();
+            }
+            return new ReturnObjectImpl(iterator.getObject());
         }
     }
 
