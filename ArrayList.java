@@ -87,21 +87,15 @@ public class ArrayList implements List {
      */
     @Override
     public ReturnObject remove(int index) {
-        if (isEmpty()) {
-            return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
-        } else if (index < 0 || index >= size()) {
-            return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-        } else {
-            ReturnObject toDelete = get(index);
-            if (!toDelete.hasError()) {
-                for (int i = index; i < size - 1; i++) {
-                    array[i] = array[i + 1];
-                }
-                array[size - 1] = null;
-                size--;
+        ReturnObject toDelete = get(index);
+        if (!toDelete.hasError()) {
+            for (int i = index; i < size() - 1; i++) {
+                array[i] = array[i + 1];
             }
-            return toDelete;
+            array[size() - 1] = null;
+            size--;
         }
+        return toDelete;
     }
 
     /**
