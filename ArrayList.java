@@ -169,7 +169,7 @@ public class ArrayList implements List {
     }
 
     private void makeBiggerArray() {
-        Object[] newArray = new Object[size * 2];
+        Object[] newArray = new Object[size() * 2];
         for (int i = 0; i < array.length; i++) {
             newArray[i] = array[i];
         }
