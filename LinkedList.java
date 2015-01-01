@@ -128,7 +128,28 @@ public class LinkedList implements List{
      */
     @Override
     public ReturnObject add(int index, Object item) {
-        return new ReturnObjectImpl("dummy");
+        if (item == null) {
+            return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+        } else if (index < 0 || index >= size()) {
+            return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        } else { 
+            if (index == 0) {
+                Node temp = first;
+                first = new Node(item, 0);
+                first.setNext(temp);
+            } else {
+                Node iterator = first;
+                while (iterator.getNext().getIndex() < index) {
+                    iterator = iterator.getNext();
+                }
+                Node temp = iterator.getNext();
+                iterator.setNext(new Node(item, index));
+                iterator.getNext().setNext(temp);
+            }
+            fixIndices();
+            size++;
+            return new ReturnObjectImpl(null);
+        }
     }
 
     /**
