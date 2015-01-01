@@ -130,6 +130,16 @@ public class LinkedList implements List{
      */
     @Override
     public ReturnObject add(Object item) {
-        return new ReturnObjectImpl("dummy");
+        if (item == null) {
+            return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+        } else {
+            Node iterator = first;
+            while (iterator != null) {
+                iterator = iterator.getNext();
+            }
+            iterator = new Node(item, size());
+            size++;
+            return new ReturnObjectImpl(null);
+        }
     }
 }
