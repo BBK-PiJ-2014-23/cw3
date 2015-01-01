@@ -21,6 +21,11 @@ public class ArrayListTester {
         assertEquals(arrayList.get(0).getError(), ErrorMessage.EMPTY_STRUCTURE);
         assertEquals(arrayList.get(66).getError(), ErrorMessage.EMPTY_STRUCTURE);
         
+        // remove on empty structure
+        assertEquals(arrayList.get(-1).getError(), ErrorMessage.EMPTY_STRUCTURE);
+        assertEquals(arrayList.get(0).getError(), ErrorMessage.EMPTY_STRUCTURE);
+        assertEquals(arrayList.get(66).getError(), ErrorMessage.EMPTY_STRUCTURE);
+        
         // add with index
         assertEquals(arrayList.add(0, null).getError(), ErrorMessage.INVALID_ARGUMENT);
         assertEquals(arrayList.add(-1, "test").getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
