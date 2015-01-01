@@ -35,7 +35,7 @@ public class ArrayList implements List {
      */
     @Override
     public boolean isEmpty() {
-        if (size == 0) {
+        if (size() == 0) {
             return true;
         } else {
             return false;
