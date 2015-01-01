@@ -17,9 +17,9 @@ public class ArrayListTester {
         assertEquals(arrayList.size(), 0);
         
         // get
-        assertEquals(arrayList.get(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        assertEquals(arrayList.get(-1).getError(), ErrorMessage.EMPTY_STRUCTURE);
         assertEquals(arrayList.get(0).getError(), ErrorMessage.EMPTY_STRUCTURE);
-        assertEquals(arrayList.get(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        assertEquals(arrayList.get(66).getError(), ErrorMessage.EMPTY_STRUCTURE);
         
         // add with index
         assertEquals(arrayList.add(0, null).getError(), ErrorMessage.INVALID_ARGUMENT);
