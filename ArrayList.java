@@ -24,7 +24,7 @@ public class ArrayList implements List {
     private int size;
 
     public ArrayList() {
-        array = new Object[100];
+        array = new Object[20];
         size = 0;
     }
 
