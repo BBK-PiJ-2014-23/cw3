@@ -35,11 +35,11 @@ public class LinkedListTester {
         assertFalse(LinkedList.isEmpty());
         assertEquals(LinkedList.size(), 2);
 
-        //         // two can be retrieved
-        //         assertEquals(LinkedList.get(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
-        //         assertEquals(LinkedList.get(0).getReturnValue(), "0");
-        //         assertEquals(LinkedList.get(1).getReturnValue(), "1");
-        //         assertEquals(LinkedList.get(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        // two can be retrieved
+        assertEquals(LinkedList.get(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        assertEquals(LinkedList.get(0).getReturnValue(), "0");
+        assertEquals(LinkedList.get(1).getReturnValue(), "1");
+        assertEquals(LinkedList.get(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
 
         //         // two can be removed
         //         assertEquals(LinkedList.remove(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
