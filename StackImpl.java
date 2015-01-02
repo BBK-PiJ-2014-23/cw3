@@ -71,7 +71,11 @@ public class StackImpl extends AbstractStack {
      *         stack is empty, an appropriate error.
      */
     public ReturnObject pop() {
-        return new ReturnObjectImpl(null);
+        ReturnObject pop = top();
+        if (!pop.hasError()) {
+            internalList.remove(internalList.size() - 1);
+        }
+        return pop;
     }
 }
 
