@@ -69,14 +69,12 @@ public class ArrayListTester {
         assertEquals(arrayList.size(), 4);
 
         // 4 can be retrieved
-
         assertEquals(arrayList.get(0).getReturnValue(), "2");
         assertEquals(arrayList.get(1).getReturnValue(), "1");
         assertEquals(arrayList.get(2).getReturnValue(), "3");
         assertEquals(arrayList.get(3).getReturnValue(), "0");
 
         // 4 can be removed
-
         assertEquals(arrayList.remove(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         assertEquals(arrayList.remove(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         assertEquals(arrayList.remove(3).getReturnValue(), "0");
@@ -86,7 +84,6 @@ public class ArrayListTester {
         assertEquals(arrayList.remove(66).getError(), ErrorMessage.EMPTY_STRUCTURE);
 
         // should be empty now
-
         assertTrue(arrayList.isEmpty());
         assertEquals(arrayList.size(), 0);
     }
