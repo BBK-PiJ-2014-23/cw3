@@ -10,7 +10,7 @@ import org.junit.Test;
 public class FunctionalArrayListTester {
     @Test
     public void test() {
-        List functionalArrayList = new FunctionalArrayList();
+        FunctionalArrayList functionalArrayList = new FunctionalArrayList();
         
         // size empty
         assertTrue(functionalArrayList.isEmpty());
@@ -20,6 +20,7 @@ public class FunctionalArrayListTester {
         assertEquals(functionalArrayList.get(-1).getError(), ErrorMessage.EMPTY_STRUCTURE);
         assertEquals(functionalArrayList.get(0).getError(), ErrorMessage.EMPTY_STRUCTURE);
         assertEquals(functionalArrayList.get(66).getError(), ErrorMessage.EMPTY_STRUCTURE);
+        assertEquals(functionalArrayList.head().getError(), ErrorMessage.EMPTY_STRUCTURE);
 
         // remove on empty structure
         assertEquals(functionalArrayList.get(-1).getError(), ErrorMessage.EMPTY_STRUCTURE);
@@ -40,13 +41,16 @@ public class FunctionalArrayListTester {
         assertEquals(functionalArrayList.get(0).getReturnValue(), "0");
         assertEquals(functionalArrayList.get(1).getReturnValue(), "1");
         assertEquals(functionalArrayList.get(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        assertEquals(functionalArrayList.head().getReturnValue(), "0");
 
         // two can be removed
         assertEquals(functionalArrayList.remove(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         assertEquals(functionalArrayList.remove(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         assertEquals(functionalArrayList.remove(0).getReturnValue(), "0");
+        assertEquals(functionalArrayList.head().getReturnValue(), "1");
         assertEquals(functionalArrayList.remove(0).getReturnValue(), "1");
         assertEquals(functionalArrayList.remove(66).getError(), ErrorMessage.EMPTY_STRUCTURE);
+        assertEquals(functionalArrayList.head().getError(), ErrorMessage.EMPTY_STRUCTURE);
 
         // should be empty now
         assertTrue(functionalArrayList.isEmpty());
@@ -73,6 +77,7 @@ public class FunctionalArrayListTester {
         assertEquals(functionalArrayList.get(1).getReturnValue(), "1");
         assertEquals(functionalArrayList.get(2).getReturnValue(), "3");
         assertEquals(functionalArrayList.get(3).getReturnValue(), "0");
+        assertEquals(functionalArrayList.head().getReturnValue(), "2");
 
         // 4 can be removed
         assertEquals(functionalArrayList.remove(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -82,6 +87,7 @@ public class FunctionalArrayListTester {
         assertEquals(functionalArrayList.remove(1).getReturnValue(), "1");
         assertEquals(functionalArrayList.remove(0).getReturnValue(), "2");
         assertEquals(functionalArrayList.remove(66).getError(), ErrorMessage.EMPTY_STRUCTURE);
+        assertEquals(functionalArrayList.head().getError(), ErrorMessage.EMPTY_STRUCTURE);
 
         // should be empty now
         assertTrue(functionalArrayList.isEmpty());
