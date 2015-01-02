@@ -48,7 +48,7 @@ public class StackImpl extends AbstractStack {
      */
     @Override
     public void push(Object item) {
-        
+        internalList.add(item);
     }
 
     /**
@@ -63,7 +63,7 @@ public class StackImpl extends AbstractStack {
         if (isEmpty()) {
             return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
         } else {
-            return new ReturnObjectImpl(internalList.get(internalList.size() - 1));
+            return internalList.get(internalList.size() - 1);
         }
     }
 
