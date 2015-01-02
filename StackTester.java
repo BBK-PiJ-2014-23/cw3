@@ -23,20 +23,14 @@ public class StackTester {
         // pop on empty structure
         assertEquals(stack.pop().getError(), ErrorMessage.EMPTY_STRUCTURE);
 
-        //         // add 2 via plain add
-        //         //assertEquals(stack.push(null).getError(), ErrorMessage.INVALID_ARGUMENT);
-        //         //assertNull(stack.push("0").getReturnValue());
-        //         //assertNull(stack.push("1").getReturnValue());
-        // 
-        //         // should be two elements
-        //         assertFalse(stack.isEmpty());
-        //         assertEquals(stack.size(), 2);
-        // 
-        //         // two can be retrieved
-        //         assertEquals(stack.top().getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
-        //         assertEquals(stack.top().getReturnValue(), "0");
-        //         assertEquals(stack.top().getReturnValue(), "1");
-        //         assertEquals(stack.top().getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        // push 1 and top
+        stack.push("0");
+        assertEquals(stack.top().getReturnValue(), "0");
+
+        // should be one element
+        assertFalse(stack.isEmpty());
+        assertEquals(stack.size(), 1);
+        
         // 
         //         // two can be removed
         //         assertEquals(stack.pop().getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
