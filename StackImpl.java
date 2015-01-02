@@ -16,7 +16,7 @@ public class StackImpl extends AbstractStack {
     public StackImpl(List list) {
         super(list);
     }
-    
+
     /**
      * Returns true if the stack is empty, false otherwise. 
      * 
@@ -45,7 +45,7 @@ public class StackImpl extends AbstractStack {
      * @param item the new item to be added
      */
     public void push(Object item) {
-        
+
     }
 
     /**
@@ -56,7 +56,11 @@ public class StackImpl extends AbstractStack {
      *         stack is empty, an appropriate error.
      */
     public ReturnObject top() {
-        return new ReturnObjectImpl(null);
+        if (isEmpty()) {
+            return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+        } else {
+            return new ReturnObjectImpl(internalList.size() - 1);
+        }
     }
 
     /**
