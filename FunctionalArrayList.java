@@ -24,7 +24,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      */
     @Override
     public ReturnObject head() {
-        return new ReturnObjectImpl(null);
+        return super.get(0);
     }
 
     /**
