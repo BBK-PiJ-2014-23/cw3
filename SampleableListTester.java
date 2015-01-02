@@ -15,6 +15,8 @@ public class SampleableListTester {
         // size empty
         assertTrue(sampleableList.isEmpty());
         assertEquals(sampleableList.size(), 0);
+        assertTrue(sampleableList.sample().isEmpty());
+        assertEquals(sampleableList.sample().size(), 0);
 
         // get on empty structure
         assertEquals(sampleableList.get(-1).getError(), ErrorMessage.EMPTY_STRUCTURE);
@@ -34,13 +36,21 @@ public class SampleableListTester {
         // should be two elements
         assertFalse(sampleableList.isEmpty());
         assertEquals(sampleableList.size(), 2);
+        
+        // should be one element in sample list
+        assertFalse(sampleableList.sample().isEmpty());
+        assertEquals(sampleableList.sample().size(), 1);
 
         // two can be retrieved
         assertEquals(sampleableList.get(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         assertEquals(sampleableList.get(0).getReturnValue(), "0");
         assertEquals(sampleableList.get(1).getReturnValue(), "1");
         assertEquals(sampleableList.get(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
-
+        
+        // one can be retrieved from sampleable list
+        assertEquals(sampleableList.sample().get(0).getReturnValue(), "0");
+        assertEquals(sampleableList.sample().get(1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        
         // two can be removed
         assertEquals(sampleableList.remove(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         assertEquals(sampleableList.remove(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -51,6 +61,8 @@ public class SampleableListTester {
         // should be empty now
         assertTrue(sampleableList.isEmpty());
         assertEquals(sampleableList.size(), 0);
+        assertTrue(sampleableList.sample().isEmpty());
+        assertEquals(sampleableList.sample().size(), 0);
 
         // prepare for adding with index tests
         assertNull(sampleableList.add("0").getReturnValue());
@@ -67,13 +79,22 @@ public class SampleableListTester {
         // should be 4 elements
         assertFalse(sampleableList.isEmpty());
         assertEquals(sampleableList.size(), 4);
+        
+        // should be 2 elements in the sampleable list
+        assertFalse(sampleableList.sample().isEmpty());
+        assertEquals(sampleableList.sample().size(), 2);
 
         // 4 can be retrieved
         assertEquals(sampleableList.get(0).getReturnValue(), "2");
         assertEquals(sampleableList.get(1).getReturnValue(), "1");
         assertEquals(sampleableList.get(2).getReturnValue(), "3");
         assertEquals(sampleableList.get(3).getReturnValue(), "0");
-
+        
+        // 2 can be retrieved from the sampleable list
+        assertEquals(sampleableList.sample().get(0).getReturnValue(), "2");
+        assertEquals(sampleableList.sample().get(1).getReturnValue(), "3");
+        assertEquals(sampleableList.sample().get(2).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        
         // 4 can be remove
         assertEquals(sampleableList.remove(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         assertEquals(sampleableList.remove(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
