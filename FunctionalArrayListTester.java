@@ -15,12 +15,18 @@ public class FunctionalArrayListTester {
         // size empty
         assertTrue(functionalArrayList.isEmpty());
         assertEquals(functionalArrayList.size(), 0);
+        
+        // empty rest list
+        assertTrue(functionalArrayList.rest().isEmpty());
 
         // get on empty structure
         assertEquals(functionalArrayList.get(-1).getError(), ErrorMessage.EMPTY_STRUCTURE);
         assertEquals(functionalArrayList.get(0).getError(), ErrorMessage.EMPTY_STRUCTURE);
         assertEquals(functionalArrayList.get(66).getError(), ErrorMessage.EMPTY_STRUCTURE);
         assertEquals(functionalArrayList.head().getError(), ErrorMessage.EMPTY_STRUCTURE);
+        
+        // get on empty rest list.
+        assertEquals(functionalArrayList.rest().get(0).getError(), ErrorMessage.EMPTY_STRUCTURE);
 
         // remove on empty structure
         assertEquals(functionalArrayList.get(-1).getError(), ErrorMessage.EMPTY_STRUCTURE);
@@ -30,11 +36,15 @@ public class FunctionalArrayListTester {
         // add 2 via plain add
         assertEquals(functionalArrayList.add(null).getError(), ErrorMessage.INVALID_ARGUMENT);
         assertNull(functionalArrayList.add("0").getReturnValue());
+        assertTrue(functionalArrayList.rest().isEmpty()); // rest list should still be empty
         assertNull(functionalArrayList.add("1").getReturnValue());
 
         // should be two elements
         assertFalse(functionalArrayList.isEmpty());
         assertEquals(functionalArrayList.size(), 2);
+        
+        // should be one element in the rest list
+        assertEquals(functionalArrayList.rest().size(), 1);
 
         // two can be retrieved
         assertEquals(functionalArrayList.get(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -42,6 +52,10 @@ public class FunctionalArrayListTester {
         assertEquals(functionalArrayList.get(1).getReturnValue(), "1");
         assertEquals(functionalArrayList.get(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         assertEquals(functionalArrayList.head().getReturnValue(), "0");
+        
+        // one element in the rest list can be retrieved
+        assertEquals(functionalArrayList.rest().get(0).getReturnValue(), "1");
+        assertEquals(functionalArrayList.rest().get(1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
 
         // two can be removed
         assertEquals(functionalArrayList.remove(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -78,7 +92,13 @@ public class FunctionalArrayListTester {
         assertEquals(functionalArrayList.get(2).getReturnValue(), "3");
         assertEquals(functionalArrayList.get(3).getReturnValue(), "0");
         assertEquals(functionalArrayList.head().getReturnValue(), "2");
-
+        
+        // three elements in the rest list can be retrieved
+        assertEquals(functionalArrayList.rest().get(0).getReturnValue(), "1");
+        assertEquals(functionalArrayList.rest().get(1).getReturnValue(), "3");
+        assertEquals(functionalArrayList.rest().get(2).getReturnValue(), "0");
+        assertEquals(functionalArrayList.rest().get(3).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
+        
         // 4 can be removed
         assertEquals(functionalArrayList.remove(-1).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
         assertEquals(functionalArrayList.remove(66).getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
