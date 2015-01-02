@@ -23,7 +23,7 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
      *         an error if the list is empty.
      */
     public ReturnObject head() {
-        return new ReturnObjectImpl(null);
+        return get(0);
     }
 
     /**
