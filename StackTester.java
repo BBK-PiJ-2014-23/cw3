@@ -20,11 +20,9 @@ public class StackTester {
         // top on empty structure
         assertEquals(stack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
 
-        //         // remove on empty structure
-        //         assertEquals(stack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
-        //         assertEquals(stack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
-        //         assertEquals(stack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
-        // 
+        // pop on empty structure
+        assertEquals(stack.pop().getError(), ErrorMessage.EMPTY_STRUCTURE);
+
         //         // add 2 via plain add
         //         //assertEquals(stack.push(null).getError(), ErrorMessage.INVALID_ARGUMENT);
         //         //assertNull(stack.push("0").getReturnValue());
