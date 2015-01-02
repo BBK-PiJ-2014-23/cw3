@@ -12,6 +12,10 @@ public class SampleableListImpl extends ArrayList implements SampleableList {
      */
     @Override
     public SampleableList sample (){
-        return new SampleableListImpl();
+        SampleableList sample = new SampleableListImpl();
+        for (int i = 0; i < size(); i = i + 2) {
+            sample.add(array[i]);
+        }
+        return sample;
     }
 }
