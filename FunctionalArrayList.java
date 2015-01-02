@@ -24,7 +24,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      */
     @Override
     public ReturnObject head() {
-        return super.get(0);
+        return get(0);
     }
 
     /**
@@ -36,6 +36,10 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
      */
     @Override
     public FunctionalList rest() {
-        return new FunctionalArrayList();
+        FunctionalList rest = new FunctionalArrayList();
+        for (int i = 1; i < size(); i++) {
+            rest.add(array[i]);
+        }
+        return rest;
     }
 }
