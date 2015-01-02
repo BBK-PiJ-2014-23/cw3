@@ -17,11 +17,9 @@ public class StackTester {
         assertTrue(stack.isEmpty());
         assertEquals(stack.size(), 0);
 
-        //         // get on empty structure
-        //         assertEquals(stack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
-        //         assertEquals(stack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
-        //         assertEquals(stack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
-        // 
+        // top on empty structure
+        assertEquals(stack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
+
         //         // remove on empty structure
         //         assertEquals(stack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
         //         assertEquals(stack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
