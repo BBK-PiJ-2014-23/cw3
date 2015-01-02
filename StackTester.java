@@ -31,6 +31,14 @@ public class StackTester {
         assertFalse(stack.isEmpty());
         assertEquals(stack.size(), 1);
         
+        // push another element
+        stack.push("1");
+        assertEquals(stack.top().getReturnValue(), "1");
+        
+        // should be two elements now
+        assertFalse(stack.isEmpty());
+        assertEquals(stack.size(), 2);
+        
         // 
         //         // two can be removed
         //         assertEquals(stack.pop().getError(), ErrorMessage.INDEX_OUT_OF_BOUNDS);
