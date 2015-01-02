@@ -23,7 +23,11 @@ public class StackImpl extends AbstractStack {
      * @return true if the stack is empty, false otherwise. 
      */
     public boolean isEmpty() {
-        return false;
+        if (size() == 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -32,7 +36,7 @@ public class StackImpl extends AbstractStack {
      * @return the number of items currently in the stack
      */
     public int size() {
-        return -1;
+        return internalList.size();
     }
 
     /**
