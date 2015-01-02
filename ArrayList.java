@@ -20,8 +20,8 @@
  * @author Stefan E. Mayer
  */
 public class ArrayList implements List {
-    private Object[] array;
-    private int size;
+    protected Object[] array;
+    protected int size;
 
     public ArrayList() {
         array = new Object[20];
