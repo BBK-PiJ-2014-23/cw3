@@ -34,6 +34,14 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
      * If the list is empty, another empty list is returned. 
      */
     public FunctionalList rest() {
-        return new FunctionalLinkedList();
+        FunctionalList rest = new FunctionalArrayList();
+        if (!isEmpty()) {
+            Node iterator = first.getNext();
+            while (iterator != null) {
+                rest.add(iterator.getObject());
+                iterator = iterator.getNext();
+            }
+        }
+        return rest;
     }
 }
