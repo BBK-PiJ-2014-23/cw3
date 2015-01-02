@@ -10,7 +10,7 @@ import org.junit.Test;
 public class SampleableListTester {
     @Test
     public void test() {
-        List sampleableList = new SampleableListImpl();
+        SampleableList sampleableList = new SampleableListImpl();
 
         // size empty
         assertTrue(sampleableList.isEmpty());
