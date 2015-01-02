@@ -22,6 +22,7 @@ public class StackImpl extends AbstractStack {
      * 
      * @return true if the stack is empty, false otherwise. 
      */
+    @Override
     public boolean isEmpty() {
         if (size() == 0) {
             return true;
@@ -35,6 +36,7 @@ public class StackImpl extends AbstractStack {
      * 
      * @return the number of items currently in the stack
      */
+    @Override
     public int size() {
         return internalList.size();
     }
@@ -44,8 +46,8 @@ public class StackImpl extends AbstractStack {
      * 
      * @param item the new item to be added
      */
+    @Override
     public void push(Object item) {
-
     }
 
     /**
@@ -55,6 +57,7 @@ public class StackImpl extends AbstractStack {
      * @return If stack is not empty, the item on the top is returned. If the
      *         stack is empty, an appropriate error.
      */
+    @Override
     public ReturnObject top() {
         if (isEmpty()) {
             return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
@@ -70,6 +73,7 @@ public class StackImpl extends AbstractStack {
      * @return If stack is not empty, the item on the top is returned. If the
      *         stack is empty, an appropriate error.
      */
+    @Override
     public ReturnObject pop() {
         ReturnObject pop = top();
         if (!pop.hasError()) {
