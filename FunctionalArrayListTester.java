@@ -10,7 +10,7 @@ import org.junit.Test;
 public class FunctionalArrayListTester {
     @Test
     public void test() {
-        FunctionalArrayList functionalArrayList = new FunctionalArrayList();
+        FunctionalList functionalArrayList = new FunctionalArrayList();
         
         // size empty
         assertTrue(functionalArrayList.isEmpty());
