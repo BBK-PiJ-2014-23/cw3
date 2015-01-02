@@ -20,8 +20,8 @@
  * @author Stefan E. Mayer
  */
 public class LinkedList implements List{
-    private Node first;
-    private int size;
+    protected Node first;
+    protected int size;
 
     public LinkedList() {
         first = null;
