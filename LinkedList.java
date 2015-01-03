@@ -22,7 +22,10 @@
 public class LinkedList implements List{
     protected Node first;
     protected int size;
-
+    
+    /**
+     * Constructor that creates a linked list containing an empty node.
+     */
     public LinkedList() {
         first = null;
         size = 0;
@@ -181,7 +184,10 @@ public class LinkedList implements List{
             return new ReturnObjectImpl(null);
         }
     }
-
+    
+    /**
+     * Helper method that reassigns index numbers to all nodes in the list.
+     */
     private void fixIndices() {
         Node iterator = first;
         int index = 0;
