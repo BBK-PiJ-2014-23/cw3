@@ -138,7 +138,7 @@ public class ArrayList implements List {
 
             array[index] = item;
             size++;
-            return new ReturnObjectImpl(null);
+            return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
         }
     }
 
@@ -163,7 +163,7 @@ public class ArrayList implements List {
             }
             array[size] = item;
             size++;
-            return new ReturnObjectImpl(null);
+            return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
         }
     }
     
