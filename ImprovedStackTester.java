@@ -39,21 +39,21 @@ public class ImprovedStackTester {
         assertFalse(improvedStack.isEmpty());
         assertEquals(improvedStack.size(), 2);
 
-        //         // removing one
-        //         assertEquals(improvedStack.pop().getReturnValue(), "1");
-        // 
-        //         // should be one element now
-        //         assertFalse(improvedStack.isEmpty());
-        //         assertEquals(improvedStack.size(), 1);
-        //         assertEquals(improvedStack.top().getReturnValue(), "0");
-        // 
-        //         // pop another element
-        //         assertEquals(improvedStack.pop().getReturnValue(), "0");
-        // 
-        //         //improvedStack is empty now
-        //         assertTrue(improvedStack.isEmpty());
-        //         assertEquals(improvedStack.size(), 0);
-        //         assertEquals(improvedStack.pop().getError(), ErrorMessage.EMPTY_STRUCTURE);
-        //         assertEquals(improvedStack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
+        // removing one
+        assertEquals(improvedStack.pop().getReturnValue(), "1");
+
+        // should be one element now
+        assertFalse(improvedStack.isEmpty());
+        assertEquals(improvedStack.size(), 1);
+        assertEquals(improvedStack.top().getReturnValue(), "0");
+
+        // pop another element
+        assertEquals(improvedStack.pop().getReturnValue(), "0");
+
+        //improvedStack is empty now
+        assertTrue(improvedStack.isEmpty());
+        assertEquals(improvedStack.size(), 0);
+        assertEquals(improvedStack.pop().getError(), ErrorMessage.EMPTY_STRUCTURE);
+        assertEquals(improvedStack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
     }
 }
