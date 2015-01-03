@@ -77,6 +77,7 @@ public class StackImpl extends AbstractStack {
      */
     @Override
     public ReturnObject pop() {
+        // Error handling is included in method top().
         ReturnObject pop = top();
         if (!pop.hasError()) {
             internalList.remove(internalList.size() - 1);
