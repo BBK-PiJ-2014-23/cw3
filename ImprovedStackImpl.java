@@ -72,7 +72,7 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public ReturnObject pop() {
-        return new ReturnObjectImpl(null);
+        return internalStack.pop();
     }
 
     /**
