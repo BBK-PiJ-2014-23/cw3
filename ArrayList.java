@@ -90,11 +90,13 @@ public class ArrayList implements List {
      */
     @Override
     public ReturnObject remove(int index) {
+        // Error handling is included in method get().
         ReturnObject toDelete = get(index);
         if (!toDelete.hasError()) {
             for (int i = index; i < size() - 1; i++) {
                 array[i] = array[i + 1];
             }
+            // Last value has moved down by one so setting the old last to null.
             array[size() - 1] = null;
             size--;
         }
@@ -129,7 +131,7 @@ public class ArrayList implements List {
             if (size() == array.length) {
                 makeBiggerArray();
             }
-
+            
             for (int i = size() - 1; i >= index; i--) {
                 array[i + 1] = array[i];
             }
