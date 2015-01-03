@@ -37,6 +37,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
     @Override
     public FunctionalList rest() {
         FunctionalList rest = new FunctionalArrayList();
+        // Not including the head so starting i at 1.
         for (int i = 1; i < size(); i++) {
             rest.add(array[i]);
         }
