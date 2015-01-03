@@ -13,6 +13,11 @@
  * @author Stefan E. Mayer
  */
 public class StackImpl extends AbstractStack {
+    /**
+     * Constructor that calls the constructor of super class AbstractStack.
+     * 
+     * @param list the list that this stack uses as an internal data structure
+     */
     public StackImpl(List list) {
         super(list);
     }
