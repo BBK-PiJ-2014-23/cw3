@@ -11,8 +11,8 @@ public class ImprovedStackTester {
     @Test
     public void test() {
         List list = new ArrayList();
-        Stack improvedStack = new ImprovedStackImpl(list);
-        // 
+        ImprovedStack improvedStack = new ImprovedStackImpl(list);
+        
         // size empty
         assertTrue(improvedStack.isEmpty());
         assertEquals(improvedStack.size(), 0);
