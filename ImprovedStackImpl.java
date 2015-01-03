@@ -15,6 +15,12 @@
  * @author Stefan E. Mayer
  */
 public class ImprovedStackImpl implements ImprovedStack {
+    private List internalList;
+    
+    public ImprovedStackImpl(List list) {
+        internalList = list;
+    }
+    
     /**
      * Returns true if the stack is empty, false otherwise. 
      * 
@@ -78,7 +84,7 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public ImprovedStack reverse() {
-        return new ImprovedStackImpl();
+        return new ImprovedStackImpl(new ArrayList());
     }
 
     /**
