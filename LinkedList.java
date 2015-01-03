@@ -154,7 +154,7 @@ public class LinkedList implements List{
             }
             fixIndices();
             size++;
-            return new ReturnObjectImpl(null);
+            return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
         }
     }
 
@@ -185,7 +185,7 @@ public class LinkedList implements List{
                 iterator.setNext(new Node(item, size()));
             }
             size++;
-            return new ReturnObjectImpl(null);
+            return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
         }
     }
     
