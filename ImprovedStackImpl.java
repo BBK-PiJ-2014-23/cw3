@@ -60,7 +60,7 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public ReturnObject top() {
-        return new ReturnObjectImpl(null);
+        return internalStack.top();
     }
 
     /**
