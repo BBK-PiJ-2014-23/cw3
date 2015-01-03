@@ -23,22 +23,22 @@ public class ImprovedStackTester {
         // pop on empty structure
         assertEquals(improvedStack.pop().getError(), ErrorMessage.EMPTY_STRUCTURE);
 
-        //         // push 1 and top
-        //         improvedStack.push("0");
-        //         assertEquals(improvedStack.top().getReturnValue(), "0");
-        // 
-        //         // should be one element
-        //         assertFalse(improvedStack.isEmpty());
-        //         assertEquals(improvedStack.size(), 1);
-        // 
-        //         // push another element
-        //         improvedStack.push("1");
-        //         assertEquals(improvedStack.top().getReturnValue(), "1");
-        // 
-        //         // should be two elements now
-        //         assertFalse(improvedStack.isEmpty());
-        //         assertEquals(improvedStack.size(), 2);
-        // 
+        // push 1 and top
+        improvedStack.push("0");
+        assertEquals(improvedStack.top().getReturnValue(), "0");
+
+        // should be one element
+        assertFalse(improvedStack.isEmpty());
+        assertEquals(improvedStack.size(), 1);
+
+        // push another element
+        improvedStack.push("1");
+        assertEquals(improvedStack.top().getReturnValue(), "1");
+
+        // should be two elements now
+        assertFalse(improvedStack.isEmpty());
+        assertEquals(improvedStack.size(), 2);
+
         //         // removing one
         //         assertEquals(improvedStack.pop().getReturnValue(), "1");
         // 
