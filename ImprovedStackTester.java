@@ -17,9 +17,9 @@ public class ImprovedStackTester {
         assertTrue(improvedStack.isEmpty());
         assertEquals(improvedStack.size(), 0);
 
-        //         // top on empty structure
-        //         assertEquals(improvedStack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
-        // 
+        // top on empty structure
+        assertEquals(improvedStack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
+
         //         // pop on empty structure
         //         assertEquals(improvedStack.pop().getError(), ErrorMessage.EMPTY_STRUCTURE);
         // 
