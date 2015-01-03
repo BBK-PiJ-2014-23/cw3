@@ -94,6 +94,7 @@ public class LinkedList implements List{
      */
     @Override
     public ReturnObject remove(int index) {
+        // Error handling is included in method get().
         ReturnObject toDelete = get(index);
         if (!toDelete.hasError()) {
             if (index == 0) {
@@ -103,6 +104,7 @@ public class LinkedList implements List{
                 while (iterator.getNext().getIndex() < index) {
                     iterator = iterator.getNext();
                 }
+                // The next node is the one to remove.
                 iterator.setNext(iterator.getNext().getNext());
             }
             fixIndices();
@@ -147,6 +149,7 @@ public class LinkedList implements List{
                 }
                 Node temp = iterator.getNext();
                 iterator.setNext(new Node(item, index));
+                // Linking back the remainder of the list to the new node.
                 iterator.getNext().setNext(temp);
             }
             fixIndices();
@@ -178,6 +181,7 @@ public class LinkedList implements List{
                 while (iterator.getNext() != null) {
                     iterator = iterator.getNext();
                 }
+                // Adding new node as the next node of the last node.
                 iterator.setNext(new Node(item, size()));
             }
             size++;
