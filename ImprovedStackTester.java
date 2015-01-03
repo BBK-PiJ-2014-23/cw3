@@ -13,9 +13,9 @@ public class ImprovedStackTester {
         List list = new ArrayList();
         Stack improvedStack = new ImprovedStackImpl(list);
         // 
-        //         // size empty
-        //         assertTrue(improvedStack.isEmpty());
-        //         assertEquals(improvedStack.size(), 0);
+        // size empty
+        assertTrue(improvedStack.isEmpty());
+        assertEquals(improvedStack.size(), 0);
 
         //         // top on empty structure
         //         assertEquals(improvedStack.top().getError(), ErrorMessage.EMPTY_STRUCTURE);
