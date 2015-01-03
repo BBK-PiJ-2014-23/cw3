@@ -15,10 +15,10 @@
  * @author Stefan E. Mayer
  */
 public class ImprovedStackImpl implements ImprovedStack {
-    private List internalList;
+    private Stack internalStack;
     
     public ImprovedStackImpl(List list) {
-        internalList = list;
+        internalStack = new StackImpl(list);
     }
     
     /**
@@ -84,7 +84,7 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public ImprovedStack reverse() {
-        return new ImprovedStackImpl(new ArrayList());
+        return new ImprovedStackImpl(null);
     }
 
     /**
