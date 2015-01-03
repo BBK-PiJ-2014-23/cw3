@@ -28,7 +28,7 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public boolean isEmpty() {
-        return false;
+        return internalStack.isEmpty();
     }
 
     /**
@@ -38,7 +38,7 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public int size() {
-        return -1;
+        return internalStack.size();
     } 
 
     /**
