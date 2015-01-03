@@ -36,6 +36,7 @@ public class FunctionalLinkedList extends LinkedList implements FunctionalList {
     public FunctionalList rest() {
         FunctionalList rest = new FunctionalArrayList();
         if (!isEmpty()) {
+            // Not including the head so starting at the second node.
             Node iterator = first.getNext();
             while (iterator != null) {
                 rest.add(iterator.getObject());
