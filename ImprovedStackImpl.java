@@ -48,7 +48,7 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public void push(Object item) {
-
+        internalStack.push(item);
     }
 
     /**
