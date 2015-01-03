@@ -22,7 +22,10 @@
 public class ArrayList implements List {
     protected Object[] array;
     protected int size;
-
+    
+    /**
+     * Constructor that creates an empy internal array.
+     */
     public ArrayList() {
         array = new Object[20];
         size = 0;
@@ -161,7 +164,12 @@ public class ArrayList implements List {
             return new ReturnObjectImpl(null);
         }
     }
-
+    
+    /**
+     * Helper method that creates an array twice the size of the internal array,
+     * copies in the values of the internal array and replaces the internal
+     * array with the newer larger array.
+     */
     private void makeBiggerArray() {
         Object[] newArray = new Object[size() * 2];
         for (int i = 0; i < array.length; i++) {
