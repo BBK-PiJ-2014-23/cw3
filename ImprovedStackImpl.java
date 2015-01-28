@@ -93,7 +93,11 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public ImprovedStack reverse() {
-        return new ImprovedStackImpl(null);
+        ImprovedStack reverse = new ImprovedStackImpl(new ArrayList());
+        for (int i = internalList.size() - 1; i >= 0; i--) {
+            reverse.push(internalList.get(i).getReturnValue());
+        }
+        return reverse;
     }
 
     /**
