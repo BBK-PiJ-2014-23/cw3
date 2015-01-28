@@ -13,7 +13,7 @@ public class SampleableListImpl extends ArrayList implements SampleableList {
     @Override
     public SampleableList sample (){
         SampleableList sample = new SampleableListImpl();
-        // Only adding uneving elements so incrementing i by 2.
+        // Only adding every other element so incrementing i by 2.
         for (int i = 0; i < size(); i = i + 2) {
             sample.add(array[i]);
         }
