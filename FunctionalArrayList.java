@@ -26,11 +26,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
     public ReturnObject head() {
         // Error handling included in method get().
         ReturnObject head = get(0);
-        if (!head.hasError()) {
-            return new ReturnObjectImpl(head.getReturnValue());
-        } else {
-            return new ReturnObjectImpl(head.getError());
-        }
+        return head;
     }
 
     /**
