@@ -78,5 +78,18 @@ public class ImprovedStackTester {
         assertEquals(improvedStack.reverse().size(), 0);
         assertEquals(improvedStack.reverse().pop().getError(), ErrorMessage.EMPTY_STRUCTURE);
         assertEquals(improvedStack.reverse().top().getError(), ErrorMessage.EMPTY_STRUCTURE);
+        
+        // testing remove(object)
+        improvedStack.push("0");
+        improvedStack.push("1");
+        improvedStack.push("2");
+        improvedStack.push("1");
+        improvedStack.push("3");
+        improvedStack.remove("1");
+        
+        assertEquals(improvedStack.size(), 3);
+        assertEquals(improvedStack.pop().getReturnValue(), "3");
+        assertEquals(improvedStack.pop().getReturnValue(), "2");
+        assertEquals(improvedStack.pop().getReturnValue(), "0");
     }
 }
