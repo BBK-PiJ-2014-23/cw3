@@ -32,7 +32,7 @@ public class ReturnObjectImpl implements ReturnObject {
      */
     @Override
     public boolean hasError() {
-        if (errorMessage == ErrorMessage.NO_ERROR) {
+        if (errorMessage.equals(ErrorMessage.NO_ERROR)) {
             return false;
         } else {
             return true;
