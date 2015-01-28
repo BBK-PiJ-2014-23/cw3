@@ -23,9 +23,7 @@ public class StackImpl extends AbstractStack {
     }
 
     /**
-     * Returns true if the stack is empty, false otherwise. 
-     * 
-     * @return true if the stack is empty, false otherwise. 
+     * {@inheritDoc}
      */
     @Override
     public boolean isEmpty() {
@@ -33,9 +31,7 @@ public class StackImpl extends AbstractStack {
     }
 
     /**
-     * Returns the number of items currently in the stack.
-     * 
-     * @return the number of items currently in the stack
+     * {@inheritDoc}
      */
     @Override
     public int size() {
@@ -43,9 +39,7 @@ public class StackImpl extends AbstractStack {
     }
 
     /**
-     * Adds an element at the top of the stack. 
-     * 
-     * @param item the new item to be added
+     * {@inheritDoc}
      */
     @Override
     public void push(Object item) {
@@ -53,11 +47,7 @@ public class StackImpl extends AbstractStack {
     }
 
     /**
-     * Returns the element at the top of the stack. The stack is
-     * left unchanged.
-     * 
-     * @return If stack is not empty, the item on the top is returned. If the
-     *         stack is empty, an appropriate error.
+     * {@inheritDoc}
      */
     @Override
     public ReturnObject top() {
@@ -69,11 +59,7 @@ public class StackImpl extends AbstractStack {
     }
 
     /**
-     * Returns the element at the top of the stack. The element is
-     * removed frmo the stack.
-     * 
-     * @return If stack is not empty, the item on the top is returned. If the
-     *         stack is empty, an appropriate error.
+     * {@inheritDoc}
      */
     @Override
     public ReturnObject pop() {
@@ -85,4 +71,3 @@ public class StackImpl extends AbstractStack {
         return pop;
     }
 }
-
