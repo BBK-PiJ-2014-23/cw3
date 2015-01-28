@@ -88,6 +88,8 @@ public class ImprovedStackTester {
         improvedStack.remove("1");
         
         assertEquals(improvedStack.size(), 3);
+        improvedStack.remove("9");
+        assertEquals(improvedStack.size(), 3);
         assertEquals(improvedStack.pop().getReturnValue(), "3");
         assertEquals(improvedStack.pop().getReturnValue(), "2");
         assertEquals(improvedStack.pop().getReturnValue(), "0");
