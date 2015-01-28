@@ -111,6 +111,10 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public void remove(Object object) {
-
+        for (int i = 0; i < internalList.size(); i++) {
+            if (internalList.get(i).getReturnValue().equals(object)) {
+                internalList.remove(i);
+            }
+        }
     }
 }
