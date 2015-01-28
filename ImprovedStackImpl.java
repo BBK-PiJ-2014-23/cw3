@@ -15,10 +15,10 @@
  * @author Stefan E. Mayer
  */
 public class ImprovedStackImpl implements ImprovedStack {
-    private Stack internalStack;
+    private List internalList;
     
     public ImprovedStackImpl(List list) {
-        internalStack = new StackImpl(list);
+        internalList = list;
     }
     
     /**
@@ -28,7 +28,7 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public boolean isEmpty() {
-        return internalStack.isEmpty();
+        return internalList.isEmpty();
     }
 
     /**
@@ -38,7 +38,7 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public int size() {
-        return internalStack.size();
+        return internalList.size();
     } 
 
     /**
@@ -48,7 +48,7 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public void push(Object item) {
-        internalStack.push(item);
+        internalList.add(item);
     }
 
     /**
@@ -60,7 +60,11 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public ReturnObject top() {
-        return internalStack.top();
+        if (isEmpty()) {
+            return new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+        } else {
+            return internalList.get(internalList.size() - 1);
+        }
     }
 
     /**
@@ -72,7 +76,12 @@ public class ImprovedStackImpl implements ImprovedStack {
      */
     @Override
     public ReturnObject pop() {
-        return internalStack.pop();
+         // Error handling is included in method top().
+        ReturnObject pop = top();
+        if (!pop.hasError()) {
+            internalList.remove(internalList.size() - 1);
+        }
+        return pop;
     }
 
     /**
