@@ -143,17 +143,4 @@ public class LinkedList implements List{
             return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
         }
     }
-
-    /**
-     * Helper method that reassigns index numbers to all nodes in the list.
-     */
-    private void fixIndices() {
-        Node iterator = first;
-        int index = 0;
-        while (iterator != null) {
-            iterator.setIndex(index);
-            index++;
-            iterator = iterator.getNext();
-        }
-    }
 }
