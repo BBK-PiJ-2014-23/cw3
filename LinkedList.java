@@ -130,14 +130,14 @@ public class LinkedList implements List{
             return new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
         } else {
             if (isEmpty()) {
-                first = new Node(item, 0);
+                first = new Node(item);
             } else {
                 Node iterator = first;
                 while (iterator.getNext() != null) {
                     iterator = iterator.getNext();
                 }
                 // Adding new node as the next node of the last node.
-                iterator.setNext(new Node(item, size()));
+                iterator.setNext(new Node(item));
             }
             size++;
             return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
