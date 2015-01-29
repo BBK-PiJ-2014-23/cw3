@@ -62,7 +62,7 @@ public class LinkedList implements List{
             return new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
         } else {
             Node iterator = first;
-            while (iterator.getIndex() < index) {
+            for (int i = 0; i < index; i++) {
                 iterator = iterator.getNext();
             }
             return new ReturnObjectImpl(iterator.getObject());
