@@ -12,7 +12,7 @@ public class StackTester {
     public void test() {
         List list = new ArrayList();
         Stack stack = new StackImpl(list);
-
+        
         // size empty
         assertTrue(stack.isEmpty());
         assertEquals(stack.size(), 0);
