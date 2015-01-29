@@ -69,7 +69,7 @@ public class LinkedList implements List{
         }
     }
 
-    /**
+       /**
      * {@inheritDoc}
      */
     @Override
@@ -81,13 +81,12 @@ public class LinkedList implements List{
                 first = first.getNext();
             } else {
                 Node iterator = first;
-                while (iterator.getNext().getIndex() < index) {
+                for (int i = 0; i < index - 1; i++) {
                     iterator = iterator.getNext();
                 }
                 // The next node is the one to remove.
                 iterator.setNext(iterator.getNext().getNext());
             }
-            fixIndices();
             size--;
         }
         return toDelete;
