@@ -104,19 +104,18 @@ public class LinkedList implements List{
         } else { 
             if (index == 0) {
                 Node temp = first;
-                first = new Node(item, 0);
+                first = new Node(item);
                 first.setNext(temp);
             } else {
                 Node iterator = first;
-                while (iterator.getNext().getIndex() < index) {
+                for (int i = 0; i < index - 1; i++) {
                     iterator = iterator.getNext();
                 }
                 Node temp = iterator.getNext();
-                iterator.setNext(new Node(item, index));
+                iterator.setNext(new Node(item));
                 // Linking back the remainder of the list to the new node.
                 iterator.getNext().setNext(temp);
             }
-            fixIndices();
             size++;
             return new ReturnObjectImpl(ErrorMessage.NO_ERROR);
         }
