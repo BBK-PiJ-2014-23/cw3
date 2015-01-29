@@ -22,7 +22,7 @@ public class ReturnObjectImpl implements ReturnObject {
      * @param errorMessage the error value of an unsuccessful operation.
      */
     public ReturnObjectImpl(ErrorMessage errorMessage) {
-        returnObject = null;
+        this.returnObject = null;
         this.errorMessage = errorMessage;
     }
 
