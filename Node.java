@@ -21,6 +21,7 @@ public class Node implements NodeInterface {
     /**
      * {@inheritDoc}
      */
+    @Override
     public Object getObject() {
         return object;
     }
@@ -28,6 +29,7 @@ public class Node implements NodeInterface {
     /**
      * {@inheritDoc}
      */
+    @Override
     public void setNext(Node next) {
         this.next = next;
     }
@@ -35,6 +37,7 @@ public class Node implements NodeInterface {
     /**
      * {@inheritDoc}
      */
+    @Override
     public Node getNext() {
         return next;
     }
