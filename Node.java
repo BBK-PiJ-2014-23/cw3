@@ -17,27 +17,21 @@ public class Node implements NodeInterface {
     }
     
     /**
-     * Getter for the object included in the node.
-     * 
-     * @return the object within the node
+     * {@inheritDoc}
      */
     public Object getObject() {
         return object;
     }
     
     /**
-     * Setter for the next node in a list.
-     * 
-     * @param next the next node in a list
+     * {@inheritDoc}
      */
     public void setNext(Node next) {
         this.next = next;
     }
     
     /**
-     * Getter for the next node in in a list.
-     * 
-     * @return the next node in a list
+     * {@inheritDoc}
      */
     public Node getNext() {
         return next;
