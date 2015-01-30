@@ -1,3 +1,7 @@
+/**
+ * This node is a container that stores an object of any kind and points to another node.
+ * It can be used in Linked Lists.
+ */
 public class Node implements NodeInterface {
     private Object object;
     private Node next;
