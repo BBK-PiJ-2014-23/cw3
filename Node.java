@@ -1,11 +1,13 @@
 /**
  * This node is a container that stores an object of any kind and points to another node.
  * It can be used in Linked Lists.
+ * 
+ * @author Stefan E. Mayer
  */
 public class Node implements NodeInterface {
     private Object object;
     private Node next;
-    
+
     /**
      * Constructor creating a new node object.
      * 
@@ -15,21 +17,21 @@ public class Node implements NodeInterface {
         this.object = object;
         this.next = null;
     }
-    
+
     /**
      * {@inheritDoc}
      */
     public Object getObject() {
         return object;
     }
-    
+
     /**
      * {@inheritDoc}
      */
     public void setNext(Node next) {
         this.next = next;
     }
-    
+
     /**
      * {@inheritDoc}
      */
